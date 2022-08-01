@@ -1,4 +1,5 @@
 # chatboxx
+Chat feito em Vue
 
 ## Project setup
 ```

@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container light-mode">
+    <div class="smartphone-case">
+      <div class="smartphone-screen light-mode">
+        <SmartphoneButtons/>
+        <UserMessages/>
+        <InputMessage/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'primeicons/primeicons.css';
+import UserMessages from './components/UserMessages.vue';
+import InputMessage from './components/InputMessage.vue';
+import SmartphoneButtons from './components/SmartphoneButtons.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    InputMessage,
+    SmartphoneButtons,
+    UserMessages
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import 'assets/style.css';
 </style>
