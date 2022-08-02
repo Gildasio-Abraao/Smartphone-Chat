@@ -3,8 +3,8 @@
     <div class="smartphone-case">
       <div class="smartphone-screen light-mode">
         <SmartphoneButtons/>
-        <UserMessages/>
-        <InputMessage/>
+        <UserMessages :messages="messages" :height="boxHeight"/>
+        <InputMessage @setMessage="setUserMessage"/>
       </div>
     </div>
   </div>
@@ -22,6 +22,20 @@ export default {
     InputMessage,
     SmartphoneButtons,
     UserMessages
+  },
+  data: () => ({
+    messages: [],
+    boxHeight: 0
+  }),
+  methods: {
+    setUserMessage(userMessage) {
+      const messageBox = document.querySelector('.messages-box');
+      this.messages.push(userMessage);
+
+      //Scroll to last message
+      this.boxHeight = messageBox.scrollHeight;
+      messageBox.scroll(0, this.boxHeight);
+    }
   }
 }
 </script>
