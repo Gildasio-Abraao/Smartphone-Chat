@@ -18,9 +18,11 @@ export default {
   }),
   methods: {
     setMessage() {
-      this.$emit('setMessage', {
-        userMessage: this.message
-      });
+      if(this.message.length > 0) {
+          this.$emit('setMessage', {
+            userMessage: this.message
+        });
+      }
       this.message = '';
     }
   }
